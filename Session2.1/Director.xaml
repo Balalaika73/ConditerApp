@@ -1,0 +1,33 @@
+﻿<Window x:Class="Session2._1.Director"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Session2._1"
+        mc:Ignorable="d"
+        Title="Экран директора" Height="450" Width="800"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="26*"/>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="168*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Период:" Margin="10,10,699,12"/>
+        <DatePicker Margin="114,10,569,12" x:Name="DateFirst"/>
+        <DatePicker Margin="248,10,435,12" x:Name="DateSecond"/>
+        <Button Content="Найти" Margin="387,8,304,9" x:Name="SerachDate" Click="SerachDate_Click"/>
+
+        <DataGrid Margin="41,35,40,53" x:Name="Equipfails_View" Grid.Row="2" IsReadOnly="True"/>
+        <ComboBox Margin="14,4,470,11" x:Name="Reason" Grid.Row="1" SelectionChanged="Reason_SelectionChanged">
+            <ComboBoxItem Content="Никакое"></ComboBoxItem>
+            <ComboBoxItem Content="Естественный износ"/>
+            <ComboBoxItem Content="Механическая поломка"/>
+            <ComboBoxItem Content="Превышена нагрузка"/>
+            <ComboBoxItem Content="Перепады питающего напряжения"/>
+        </ComboBox>
+        <TextBlock Text="Суммарное время" FontSize="17" VerticalAlignment="Center" Margin="352,4,16,10" Grid.Row="1" x:Name="ItogTime"/>
+        <Button x:Name="Exit" Content="ВЫХОД" Margin="702,9,16,2" Click="Exit_Click"/>
+        <Button Content="Печать" Margin="542,8,149,9" x:Name="Export" Click="Export_Click"/>
+    </Grid>
+</Window>
